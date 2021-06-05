@@ -1,0 +1,46 @@
+<%= form_with(model: ticket, local: true) do |form| %>
+
+  <% if ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ticket.errors.count, "error") %> prohibited this ticket from being saved:</h2>
+
+      <ul>
+
+      <% ticket.errors.full_messages.each do |message| %>
+          <div class="alert alert-danger" role="alert">
+            <%= message %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+      <% end %>
+
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Title</label>
+      <%= form.text_field 'title', class:"form-control", id:"inputEmail4", placeholder:"Title" %>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="due_date">Due Date</label>
+      <div class="datepicker date input-group p-0 shadow-sm">
+          <%= form.text_field 'due_date', placeholder:"Choose a due date", class:"form-control ", id:"due_date"%>
+          <div class="input-group-append"><span class="input-group-text px-4"><i class="fa fa-clock-o"></i></span></div>
+        </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="notes">Title</label>
+    <%= form.text_area 'notes', rows: 5, class:"form-control", id:"notes", placeholder:"Title" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-success" %>
+  </div>
+
+<% end %>

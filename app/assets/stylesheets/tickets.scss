@@ -1,0 +1,16 @@
+// Place all the styles related to the Tickets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.datepicker {
+  td {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    font-size: 0.85rem !important;
+  }
+  th {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    font-size: 0.85rem !important;
+  }
+  margin-bottom: 3rem !important;
+}
